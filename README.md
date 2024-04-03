@@ -15,7 +15,7 @@ index.html
 const dom = elm("div",{width:100,height:30},[
     elm("h1",{},[textelm("cDom.js")]),
     elm("p",{},[
-        elm("span",{},[textelm("vanila-jsで簡単にDOMを作りたいので片手間に作ったライブラリです。")]),
+        elm("span",{},[textelm("vanilla-jsで簡単にDOMを作りたいので片手間に作ったライブラリです。")]),
         elm("span",{},[textelm("cDomはcreate-DOMの略です。")]),
     ]),
     elm("p",{},[
