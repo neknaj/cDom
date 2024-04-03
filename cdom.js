@@ -1,3 +1,4 @@
+// https://github.com/neknaj/cDom
 function elm(type,prop,children) {
     const elm = document.createElement(type);
     const propkey = Object.keys(prop);

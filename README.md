@@ -1,7 +1,7 @@
 # cDom
 javascriptで簡単にDOMを生成するためのライブラリ
 
-# サンプルコード
+## サンプルコード
 index.html
 ```html
 <!DOCTYPE html>
@@ -34,6 +34,6 @@ document.body.appendChild(dom);
 </script>
 ```
 
-# ライセンス
+## ライセンス
 [MITライセンス](LICENSE) 又は [CC0](https://creativecommons.org/publicdomain/zero/1.0/)  
 どちらででもご利用下さい  
