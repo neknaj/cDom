@@ -25,4 +25,68 @@ const dom = elm("div",{width:100,height:30},[
 // DOMを追加する
 document.body.appendChild(dom);
 
+
+var codeStr = `// DOMを生成する
+const dom = elm("div",{width:100,height:30},[
+    elm("h1",{},[textelm("cDom.js")]),
+    elm("p",{},[
+        elm("span",{},[textelm("vanilla-jsで簡単にDOMを作りたいので片手間に作ったライブラリです。")]),
+        elm("span",{},[textelm("cDomはcreate-DOMの略です。")]),
+    ]),
+    elm("p",{},[
+        textelm("このライブラリを使うことで、"),
+        elm("code",{},[textelm("document.createElement()")]),
+        textelm("と"),
+        elm("code",{},[textelm("element.setAttribute()")]),
+        textelm("と"),
+        elm("code",{},[textelm("element.appendChild()")]),
+        textelm("を書き続ける苦痛から解放されます。"),
+    ]),
+]);
+// DOMを追加する
+document.body.appendChild(dom);`
+
+// DOMを生成する
+const exampleDom = elm("pre",{width:"100%",height:100,style:"background:#000;color:#fff;padding:10px;"},[elm("code",{},[textelm(codeStr)])]);
+// DOMを追加する
+document.body.appendChild(exampleDom);
+
+
+let count = 0;
+const updatecount = (num)=>{
+    count += num
+    document.getElementById("count").textContent = count
+}
+const dom1 = elm("div",{},[textelm("状態管理のテスト"),
+    elm("div",{style:"display:flex;"},[
+        elm("button",{id:"up",onclick:"updatecount(1)"},[textelm("👍")]),
+        elm("button",{id:"down",onclick:"updatecount(-1)"},[textelm("👎")]),
+        elm("div",{id:"count",style:"margin:0 5px;"},[textelm("0")])
+    ])
+]);
+
+// DOMを追加する
+document.body.appendChild(dom1);
+
+
+var codeStr = `let count = 0;
+const updatecount = (num) => {
+    count += num;
+    document.getElementById("count").textContent = count;
+}
+const dom1 = elm("div",{},[textelm("状態管理のテスト"),
+    elm("div",{style:"display:flex;"},[
+        elm("button",{id:"up",onclick:"updatecount(1)"},[textelm("👍")]),
+        elm("button",{id:"down",onclick:"updatecount(-1)"},[textelm("👎")]),
+        elm("div",{id:"count",style:"margin:0 5px;"},[textelm("0")]),
+    ]),
+]);
+
+document.body.appendChild(dom1);`
+
+
+const example1Dom = elm("pre",{width:"100%",height:100,style:"background:#000;color:#fff;padding:10px;"},[elm("code",{},[textelm(codeStr)])]);
+document.body.appendChild(example1Dom);
+
 </script>
+
