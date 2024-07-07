@@ -2,8 +2,13 @@
 <title>cDom Sample Page</title>
 <meta charset="utf-8">
 <script src="cdom.js"></script>
+<body></body>
 <script>
-
+let count = 0;
+const updatecount = (num)=>{
+    count += num
+    document.getElementById("count").textContent = count
+}
 function main() {
     // DOMを生成する
     const dom = elm("div",{width:100,height:30},[
@@ -28,7 +33,18 @@ function main() {
     ]);
     // DOMを追加する
     document.body.appendChild(dom);
+    
+    const dom1 = elm("div",{},[textelm("状態管理のテスト"),
+    elm("div",{style:"display:flex;"},[
+        elm("button",{id:"up",onclick:"updatecount(1)"},[textelm("👍")]),
+        elm("button",{id:"down",onclick:"updatecount(-1)"},[textelm("👎")]),
+        elm("div",{id:"count",style:"margin:0 5px;"},[textelm("0")])
+    ])
+]);
+document.body.appendChild(dom1);
+
 }
 window.onload = main;
 
 </script>
+
