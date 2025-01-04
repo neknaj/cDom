@@ -1,3 +1,5 @@
+// https://github.com/neknaj/cDom
+
 export function elm(
     type: string,
     prop: { [key: string]: any },
