@@ -37,6 +37,11 @@ Element.prototype.Add = function (child) {
     return this;
 };
 
+Element.prototype.Replace = function (children) {
+    this.replaceChildren(...children);
+    return this;
+};
+
 Element.prototype.Listen = function (type, listener, options) {
     this.addEventListener(type, listener, options);
     return this;

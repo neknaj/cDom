@@ -30,6 +30,7 @@ declare global {
     interface Element {
         Clear(): this;
         Add(child: Node): this;
+        Replace(children: Node[]): this;
         Listen(
             type: string,
             listener: EventListenerOrEventListenerObject,
@@ -47,6 +48,11 @@ Element.prototype.Clear = function (): Element {
 
 Element.prototype.Add = function (child: Node): Element {
     this.appendChild(child);
+    return this;
+};
+
+Element.prototype.Replace = function (children: Node[]) {
+    this.replaceChildren(...children);
     return this;
 };
 
