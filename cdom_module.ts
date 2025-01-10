@@ -28,6 +28,7 @@ export function textelm(text: string): Text {
 
 declare global {
     interface Element {
+        Clear(): this;
         Add(child: Node): this;
         Listen(
             type: string,
@@ -38,6 +39,11 @@ declare global {
         addClass(name: string): this;
     }
 }
+
+Element.prototype.Clear = function (): Element {
+    this.innerHTML = "";
+    return this;
+};
 
 Element.prototype.Add = function (child: Node): Element {
     this.appendChild(child);
