@@ -37,6 +37,11 @@ Element.prototype.Add = function (child) {
     return this;
 };
 
+Element.prototype.Proc = function (func) {
+    func(this);
+    return this;
+};
+
 Element.prototype.Replace = function (children) {
     this.replaceChildren(...children);
     return this;

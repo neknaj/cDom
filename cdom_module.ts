@@ -30,6 +30,7 @@ declare global {
     interface Element {
         Clear(): this;
         Add(child: Node): this;
+        Proc<T extends HTMLElement>(func: (elm: T) => any): T;
         Replace(children: Node[]): this;
         Listen(
             type: string,
@@ -49,6 +50,11 @@ Element.prototype.Clear = function (): Element {
 Element.prototype.Add = function (child: Node): Element {
     this.appendChild(child);
     return this;
+};
+
+Element.prototype.Proc = function <T extends HTMLElement>(func: (elm: T) => any): T {
+    func(this as T);
+    return this as T;
 };
 
 Element.prototype.Replace = function (children: Node[]) {
